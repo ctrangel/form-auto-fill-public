@@ -52,7 +52,7 @@ major_element.send_keys('Applied Computer Science')
 home_address_element.send_keys('111 butter street')
 home_country_element.send_keys('United States')
 city_element.send_keys('city')
-desired_state = 'state'
+desired_state = 'Pennsylvania'
 state_dropdown.select_by_visible_text(desired_state) #ignore this don't touch it
 zip_element.send_keys('111111')
 phone_element.send_keys('0000000000')
