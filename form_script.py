@@ -64,6 +64,13 @@ email_element.send_keys('email@email.com')
 
 time.sleep(8)
 
-input('Press ENTER to close the automated browser') #via terminal
-
-driver.quit()
+# if yes then restart the script and apply for the other scholarships
+# if no then close the browser
+print('Would you like to apply for the other scholarships?')
+print('Enter y for yes or n for no')
+answer = input()
+if answer == 'y':
+    driver.quit()
+    exec(open('christian.py').read())
+else:
+    driver.quit()
