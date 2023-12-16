@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
+import sys
 import time
 
 # Path: form_script.py
@@ -14,9 +15,20 @@ driver = webdriver.Chrome()
 # url to the scholarship application
 url = 'https://www.pointpark.edu/about/admindepts/academicandstudent/scholarshipapplication/index' 
 driver.get(url)
+driver.maximize_window()
 
 # lil delay, gotta take things slow, enjoy life
 time.sleep(2)
+def loading_spinner():
+    spinner = "|/-\\"
+    for _ in range(10):
+        sys.stdout.write("\r" + "Loading " + spinner[_ % len(spinner)])
+        sys.stdout.flush()
+        time.sleep(0.2)
+
+loading_spinner()
+print('complete')
+print('commence the auto fill')
 
 # elements
 first_name_element = driver.find_element(By.NAME, 'field_9409')
